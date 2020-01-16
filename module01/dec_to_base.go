@@ -17,22 +17,16 @@ import (
 func DecToBase(dec, base int) string {
 	converted := ""
 	result := dec
-	iters := 0
 	for result > 0 {
 		nextDigit := step1(result, base)
-		if nextDigit <= 9 {
-			converted = fmt.Sprintf("%d%s", nextDigit, converted)
-		} else {
-			converted = fmt.Sprintf("%s%s", baseNumbersConversion[nextDigit], converted)
-		}
+		converted = fmt.Sprintf("%s%s", baseNumbersConversion[nextDigit], converted)
 		result = step2(result, base)
-		iters++
-		if iters > 40 {
-			break
-		}
 	}
 	return converted
 }
+
+// I broke out the functions, but probably don't need to. I also chose a map of
+// characters rather than a charset as in the video
 
 func step1(dec, base int) int {
 	result := dec % base
