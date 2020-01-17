@@ -19,7 +19,7 @@ func DecToBase(dec, base int) string {
 	result := dec
 	for result > 0 {
 		nextDigit := step1(result, base)
-		converted = fmt.Sprintf("%s%s", baseNumbersConversion[nextDigit], converted)
+		converted = fmt.Sprintf("%s%s", decimalToHigherBaseConversion[nextDigit], converted)
 		result = step2(result, base)
 	}
 	return converted
@@ -38,7 +38,7 @@ func step2(dec, base int) int {
 	return int(result)
 }
 
-var baseNumbersConversion = map[int]string{
+var decimalToHigherBaseConversion = map[int]string{
 	0:  "0",
 	1:  "1",
 	2:  "2",
