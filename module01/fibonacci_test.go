@@ -21,6 +21,7 @@ func TestFibonacci(t *testing.T) {
 		{14, 377},
 		{22, 17711},
 		{25, 75025},
+		{-1, 0},
 		// This test case may be much slower depending on your
 		// solution. We will look at how to speed it up in a future
 		// module. Feel free to comment it out if it is too slow.
